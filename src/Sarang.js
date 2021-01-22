@@ -1,8 +1,9 @@
 import React from 'react';
+import Co_buying from './Co_buying';
 
 function Sarang(){
     return(
-        <div>사랑관입니다.</div>
+        <div><Co_buying/></div>
     );
 }
 

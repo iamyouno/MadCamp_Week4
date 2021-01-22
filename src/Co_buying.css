@@ -1,0 +1,16 @@
+/* .Co_buying thead tr td {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.Co_buying tbody tr td {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}  */
+
+.Co_buying {
+    border-collapse: collapse;
+    padding: 10px 10px 10px 10px
+}
