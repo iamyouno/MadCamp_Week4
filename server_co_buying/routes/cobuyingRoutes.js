@@ -7,6 +7,12 @@ module.exports = function (app, Cobuying) {
         })       
     })
 
+    app.get('/api/cobuying/:id', function(req, res) {
+        Cobuying.find({_id: req.params.id}, function (err, cobuying) {
+            res.json(cobuying)
+        })
+    })
+
     app.post('/api/cobuying', function (req, res) {
         var cobuying = new Cobuying()
         cobuying.dorm = 'Jilli'
