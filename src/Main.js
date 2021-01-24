@@ -2,9 +2,11 @@ import React from 'react';
 import './btnStyle.css';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
+import './Login.css'
 
-function Main(){
+function Main(props){
     return(
+        <>
         <div className="btn">
             <ul style={{listStyleType: 'none'}}>
                 <table>
@@ -29,6 +31,21 @@ function Main(){
                 </table>
             </ul>
         </div>
+        <div>
+            {!props.hasCookie && (
+            <div class = "Login">
+                <Link to = '/Login'>
+                    <span>로그인</span>
+                </Link>    
+            </div>
+            )}
+            {props.hasCookie && (
+            <div class = "Login" >
+                    <button onClick = {props.removeCookie}>로그아웃</button>  
+            </div>
+            )}
+        </div>
+        </>
     );
 }
 
