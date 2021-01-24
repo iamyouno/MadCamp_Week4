@@ -19,8 +19,10 @@ app.use(cors());
 var port = process.env.PORT || 8080;
 
 var cobuying = require('./models/cobuying');
+var reply = require('./models/reply');
 
 var router_cobuying = require('./routes/cobuyingRoutes')(app, cobuying);
+var router_reply = require('./routes/replyRoutes')(app, reply);
 
 var server = app.listen(port, function () {
     console.log("connect");

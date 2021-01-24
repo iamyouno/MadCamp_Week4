@@ -1,0 +1,48 @@
+
+.room {
+    width: 70%;
+}
+
+.room table {
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 270px;
+    margin-left: 50px;
+}
+
+.room table tr td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.room table div {
+    background-color: rgb(141, 141, 141);
+    width: 60px;
+    height: 105px;
+    position: relative;
+    font-size: large;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.hall {
+    background-color:rgb(141, 141, 141);
+    width: 30%;
+    color: white;
+}
+
+.hall div{
+    color: white;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.roomMemo {
+    position: relative;
+    float: right;
+    width: 30%;
+}
