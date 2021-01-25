@@ -2,11 +2,38 @@ import React from 'react';
 import './btnStyle.css';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
-import './Login.css'
+import Button from '@material-ui/core/Button'
+import Icon from '@material-ui/icons/Person';
 
 function Main(props){
     return(
         <>
+        <nav style = {{height: "80px"}}>
+            <div class = "account-wrap">
+                {!props.hasCookie && (
+                <div class = "account">
+                    <Link to = '/Login'>
+                        <Button
+                            variant="outlined"
+                            color="primary"
+                            startIcon={<Icon />}    
+                        >로그인
+                        </Button>
+                    </Link>    
+                </div>
+                )}
+                {props.hasCookie && (
+                <div class = "account" >
+                        <Button 
+                            onClick = {props.removeCookie}
+                            variant="outlined"
+                            color="primary"
+                            startIcon={<Icon />} 
+                        >로그아웃</Button>  
+                </div>
+                )}
+            </div>
+        </nav>
         <div className="btn">
             <ul style={{listStyleType: 'none'}}>
                 <table>
@@ -30,20 +57,6 @@ function Main(props){
                     </tr>
                 </table>
             </ul>
-        </div>
-        <div>
-            {!props.hasCookie && (
-            <div class = "Login">
-                <Link to = '/Login'>
-                    <span>로그인</span>
-                </Link>    
-            </div>
-            )}
-            {props.hasCookie && (
-            <div class = "Login" >
-                    <button onClick = {props.removeCookie}>로그아웃</button>  
-            </div>
-            )}
         </div>
         </>
     );

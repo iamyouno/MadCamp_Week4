@@ -8,6 +8,10 @@ import { Link, Route, BrowserRouter as Router, useParams} from 'react-router-dom
 import './FreeOne.css'
 import { Checkbox } from '@material-ui/core';
 
+import Create from '@material-ui/icons/Create';
+import IconButton from '@material-ui/core/IconButton';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+
 function FreeOne(){
 
     var params = useParams();
@@ -128,40 +132,61 @@ function FreeOne(){
         //     >글쓰기</button>
         // </Link>
         // </div>
-        <>
-            <div className='form-wrapper'>
-                <h1 className="title">{Content.title}</h1>
-                <div className="content">{Content.content}</div>
+        <div className = "FreeOnearticle-container">
+            <div className = "FreeOnetitle-wrap">
+                <h1>자유게시판</h1>
             </div>
-            <div className="comments-container">
-                {viewComment.map(element => 
-                    <div>
-                        <div>
-                            <h3>{element.anonymous ? ("익명"):(element.userid)}:{element.commentcontent}</h3>
+            <div className = "FreeOnearticles-wrap">
+                <article>
+                    <div className = "article">
+                        <div className = "profile">
+                            <h3 className = "large">익명</h3>
                         </div>
-                    </div>)}
-            </div>
-            <div>
-                <form>
-                    <>
-                        익명
-                        <Checkbox
-                            checked = {checked}
-                            onChange = {handleChange}    
-                        ></Checkbox>
-                    </>
-                <input
-                    type="text"
-                    className="title"
-                    placeholder="댓글 달기..."
-                    onChange = {getValue}
-                    />
-                <button
-                    onClick={submitComment}
-                >게시</button>
-                </form>  
+                        <hr></hr>
+                        <h2 className="large">{Content.title}</h2>
+                        <p className="large">{Content.content}</p>
+                        <hr></hr>
+                        <div className = "comment">
+                            {viewComment.map(element =>
+                            <article >
+                                <div className = "parent">
+                                    <h3 className = "medium">{element.anonymous ? ("익명"):(element.userid)}</h3>
+                                    <hr></hr>
+                                    <p class = "large">{element.commentcontent}</p> 
+                                    <hr></hr> 
+                                </div>
+                            </article>)}
+                            <form className = "writecomment">
+                                <input
+                                    type="text"
+                                    className="text"
+                                    placeholder="댓글을 입력하세요."
+                                    onChange = {getValue}
+                                />
+                                <div className = "option">
+                                    <FormControlLabel
+                                        className = "anonym"
+                                        label = "익명"
+                                        control = {<Checkbox
+                                            color="primary"
+                                            checked = {checked}
+                                            onChange = {handleChange}    
+                                        />}
+                                        labelPlacement = "start"
+                                    >
+                                    </FormControlLabel>
+                                    <IconButton 
+                                        onClick = {submitComment}
+                                        variant="outlined"
+                                        color="primary"
+                                    ><Create style ={{marginTop: "-3px"}}></Create></IconButton>
+                                </div>
+                            </form>
+                        </div>  
+                    </div>
+                </article>
             </div>    
-        </> 
+        </div> 
     );
 
 }

@@ -2,6 +2,9 @@ import React from 'react';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import Axios from 'axios';
+import './Login.css'
+import Button from '@material-ui/core/Button'
+import 'semantic-ui-css/semantic.min.css';
 
 function Login({setHasCookie}){
     
@@ -45,28 +48,42 @@ function Login({setHasCookie}){
     }
 
     return(
-        <div>
+        <div class = "container">
         <form onSubmit = {handleSubmit}>
-            <input
-                type="text"
-                placeholder="아이디"
-                value = {userId} // 적혀있는 값을 변경....
-                onChange = {e => setUserId(e.target.value)}
-            />
-            <input
-                type="password"
-                placeholder="비밀번호"
-                value = {userPw} // 적혀있는 값을 변경....
-                onChange = {e => setUserPw(e.target.value)}
-            />
-        <button type = "submit"
-        >로그인</button>
-        </form> 
-            <Link to="/Join">
-            회원가입
-            </Link>
-        </div>
-
+            <p class = "input">
+                <input
+                    class = "text"
+                    type="text"
+                    placeholder="아이디"
+                    value = {userId} // 적혀있는 값을 변경....
+                    onChange = {e => setUserId(e.target.value)}
+                />
+            </p>
+            <p class = "input">
+                <input
+                    class = "text"
+                    type="password"
+                    placeholder="비밀번호"
+                    value = {userPw} // 적혀있는 값을 변경....
+                    onChange = {e => setUserPw(e.target.value)}
+                />
+            </p>
+            <Button 
+                type = "submit"
+                // class = "submitbutton"
+                variant="outlined"
+                color="primary"
+                style = {{width : "100%", fontSize: "16px"}}
+                
+            >로그인</Button>
+            <p class = "register">
+                <Link to="/Join">
+                회원가입
+                </Link>
+            </p>
+            </form>
+        </div>   
+    
     )
 }
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import {useState, useEffect} from 'react';
 import Axios from 'axios';
+import "./Join.css"
 
 function Join(){
 

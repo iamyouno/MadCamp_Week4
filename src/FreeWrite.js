@@ -1,11 +1,15 @@
 import React from 'react';
 import {Component} from 'react';
 import {useState, useEffect} from 'react';
-import './Free.css';
+import './style/FreeWrite.css';
 import Axios from 'axios';
 import Alert from '@material-ui/lab/Alert'
 import { AlertTitle } from '@material-ui/lab';
 import { Checkbox } from '@material-ui/core';
+import { Button } from '@material-ui/core';
+import Create from '@material-ui/icons/Create';
+import IconButton from '@material-ui/core/IconButton';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 function FreeWrite(){
 
@@ -73,37 +77,57 @@ function FreeWrite(){
     }
 
     return(
-        <div className="Free">
-        <h1>Free Board</h1>
-        {/* <div className='movie-container'>
-            {viewContent.map(element => 
-                <div>
-                    <h2>{element.title}</h2>
+        <div className = "FreeWritetotal">
+        <><div class = "FreeWritetitle-wrap">
+            <h1>자유 게시판/글쓰기</h1>
+        </div>
+        <div className = "FreeWritearticles-wrap">
+            <form className="FreeWritewrite">
+        
+            {/* <div className='movie-container'>
+                {viewContent.map(element => 
                     <div>
-                        {element.content}
+                        <h2>{element.title}</h2>
+                        <div>
+                            {element.content}
+                        </div>
                     </div>
-                </div>
-            )}
-        </div> */}
-        <div className='form-wrapper'>
-            <input className="title-input" type='text' placeholder='제목' onChange = {getValue} name = 'title' />
-            <textarea className="text-area" placeholder='내용' onChange = {getContentValue}></textarea>
+                )}
+            </div> */}
+        
+            <p>
+                <input className="title" type='text' placeholder='제목' onChange = {getValue} name = 'title' />
+            </p>
+            <p>
+                <textarea  placeholder='내용' onChange = {getContentValue}></textarea>
+            </p>
+            <div className ="FreeWriteclearBothOnly"></div>
+            <FormControlLabel
+                className = "anonym"
+                label = "익명"
+                control = {<Checkbox
+                            color="primary"
+                            checked = {checked}
+                            onChange = {handleChange}    
+                            />}
+                labelPlacement = "start"
+                
+            >
+            </FormControlLabel>
+            <IconButton 
+                // className="submit-button"
+                // onClick = {() => {
+                //     setViewContent(viewContent.concat({...Content}));
+                // }}
+                onClick = {submitContent}
+                variant="outlined"
+                color="primary"
+            ><Create></Create></IconButton>
+            <div className ="FreeWriteclearBothOnly"></div>
+            </form>
         </div>
-        <>
-            익명
-            <Checkbox
-                checked = {checked}
-                onChange = {handleChange}    
-            ></Checkbox>
-        </>
-        <button 
-        className="submit-button"
-        // onClick = {() => {
-        //     setViewContent(viewContent.concat({...Content}));
-        // }}
-        onClick = {submitContent}
-        >입력</button>
-        </div>
+    </>
+    </div>
     );
 
 }

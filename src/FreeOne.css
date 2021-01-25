@@ -1,29 +1,224 @@
 .form-wrapper{
     width: 80%;
     margin: 0 auto;
-  }
+}
 
-  .title {
-    width: 500px;
-    height: 40px;
-    margin: 10px;
-  }
-  
-  .content {
-    width: 80%;
-    min-height: 500px;
-  }
+.title {
+  width: 500px;
+  height: 40px;
+  margin: 10px;
+}
 
-  .comment-container {
-    margin: 0 auto;
-    width: 80%;
-    border: 1px solid #333;
-    padding: 10px 0 30px 0;
-    border-radius: 5px;
-    margin-bottom : 50px;
-  }
+.content {
+  width: 80%;
+  min-height: 500px;
+}
 
-  .comment{
-    margin: -5px 4px 4px 35px; 
-    padding: 10px 10px 0 10px; 
-  }
+.comment-container {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #333;
+  padding: 10px 0 30px 0;
+  border-radius: 5px;
+  margin-bottom : 50px;
+}
+
+.comment{
+  margin: -5px 4px 4px 35px; 
+  padding: 10px 10px 0 10px; 
+}
+
+.FreeOnearticle-container{
+  /* position: relative; */
+  margin: 0 auto 25px auto;
+  width: 1180px;
+  box-sizing: border-box;
+  display: block;
+}
+
+.FreeOnetitle-wrap{
+  float: none;
+  /* position: relative;
+  left: 25px; */
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 780px;
+  margin-bottom: -20px;
+  padding: 15px;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+}
+
+.FreeOnetitle-wrap h1{
+  color: #292929;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.FreeOnearticle-container hr{
+  clear: both;
+  width: 100%;
+  height: 0;
+  border: 0;
+}
+
+.FreeOnearticles-wrap{
+  /* float: none;
+  position: relative;
+  left: 25px; */
+  margin: 0 auto;
+  margin-top: 25px;
+  width: 780px;
+}
+
+.FreeOnearticles-wrap article{
+  margin-bottom: -1px;
+  box-sizing: border-box;
+  border: 1px solid #e3e3e3;
+  background-color: #fff;
+  display: block;
+}
+
+.FreeOnearticles-wrap article div.article{
+  display: block;
+  padding: 15px;
+}
+
+.FreeOnearticles-wrap article div.profile{
+  float: left;
+  margin-bottom: 10px;
+  height: 20px;
+}
+
+.FreeOnearticles-wrap article h3.large{
+  height: 20px;
+  max-width: 200px;
+  line-height: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #292929;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.FreeOnearticles-wrap article h2.large{
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #292929;
+}
+
+.FreeOnearticles-wrap article hr{
+  clear: both;
+  height: 0;
+  border: 0;
+  width: 100%;
+}
+
+.FreeOnearticles-wrap article p.large{
+  padding-bottom: 15px;
+  line-height: 20px;
+  color: #444444;
+  font-size: 14px;
+  word-break: break-all;
+  font-family: "맑은 고딕", 돋움, tahoma;
+  letter-spacing: -0.5px;
+}
+
+.FreeOnearticles-wrap article div.comment{
+  color: #666;
+  font-family: "맑은 고딕", 돋움, tahoma;
+  font-size: 12px;
+  letter-spacing: -0.5px;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.FreeOnearticles-wrap article div.comment div.parent{
+  padding: 15px 15px 0 15px;
+  border-top: 1px solid #e3e3e3;
+  margin: 0;
+  border: 0;
+  background-color: #fff;
+  display: block;
+}
+
+.FreeOnearticles-wrap article h3.medium{
+  float: left;
+  max-width: 90px;
+  margin: 0 10px 5px 0;
+  height: 20px;
+  line-height: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #292929;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+}
+
+.FreeOnearticles-wrap article div.comment p.large{
+  padding-bottom: 5px;
+  line-height: 20px;
+  color: #444444;
+  font-size: 14px;
+  word-break: break-all;
+}
+
+.FreeOnearticles-wrap article form.writecomment{
+  position: relative;
+  border-top: 1px solid #e3e3e3;
+  background-color: #f8f8f8;
+}
+
+.FreeOnearticles-wrap article form.writecomment input.text{
+  margin: 0;
+  padding: 10px 85px 10px 10px;
+  border: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 20px;
+  box-sizing: border-box;
+  color: #262626;
+  font-size: 13px;
+  overflow: hidden;
+  resize: none;
+  background-color: transparent;
+}
+
+.FreeOnearticles-wrap article form.writecomment *:focus{
+  outline: none;
+}
+
+.FreeOnearticles-wrap article form.writecomment div.option{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 40px;
+  font-size: 0;
+  list-style: none;
+}
+
+.FreeOnearticles-wrap article form.writecomment .anonym{
+  margin-right: 5px;
+  /* display: inline-block; */
+  width: 80px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40px 40px;
+  cursor: pointer;
+}
+
+.FreeOnearticles-wrap article form.writecomment Button{
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  /* background-repeat: no-repeat;*/
+  background-position: center center;
+  background-size: 40px 40px;
+  cursor: pointer;
+}
