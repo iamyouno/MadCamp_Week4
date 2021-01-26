@@ -57,7 +57,7 @@ function Free(){
 
     useEffect(() => {
         Axios.get('http://localhost:3002/api/freeboard').then((response)=>{
-            setViewContent(response.data);
+            setViewContent(response.data.reverse());
         })
     },[viewContent]) // useEffect 인자로 state 보내주면 state 바뀔때마다 useEffect 실행....
     
@@ -70,8 +70,8 @@ function Free(){
     // var apiResponse = {greeting: getData()}
     
     return(
-        <div class = "Freetotal-container">
-        <div class = "Freetitle-wrap">
+        <div className = "Freetotal-container">
+        <div className = "Freetitle-wrap">
             <h1>자유 게시판</h1>
         </div>
         <div className="Freeboard-container">
@@ -94,12 +94,12 @@ function Free(){
             {viewContent.map(element => 
                 <NavLink to = {'/Jilli/freeboardwrite/' + element._id}>
                     <article>
-                        <div class = "article">
-                            <h2 class = "medium">{element.title}</h2>
-                            <p class = "small">
+                        <div className = "article">
+                            <h2 className = "medium">{element.title}</h2>
+                            <p className = "small">
                                 {element.content}
                             </p>
-                            <h3 class ="small">{element.anonymous ? ("익명"):(element.userid)}</h3>
+                            <h3 className ="small">{element.anonymous ? ("익명"):(element.userid)}</h3>
                             <hr></hr>
                         </div>
                     </article>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './style/App.css';
 import Main from './Main';
 import Sarang from './Sarang';
 import Free from './Free';
@@ -24,7 +24,7 @@ function App() {
 
   return (
     <Router>
-      <Route exact path = '/'><Main hasCookie = {hasCookie} setHasCookie = {setHasCookie} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}}/></Route>
+      <Route exact path = '/'><Main cookies = {cookies} hasCookie = {hasCookie} setHasCookie = {setHasCookie} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}}/></Route>
       <Route path='/Sarang'><Sarang/></Route>
       <Route exact path = '/Jilli'><Free/></Route>
       <Route exact path = '/Jilli/freeboardwrite'>{hasCookie?(<FreeWrite></FreeWrite>):(<Redirect to ={{pathname : "/Login"}}/>)}</Route>

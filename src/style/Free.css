@@ -101,6 +101,15 @@
   display: block;
 }
 
+.Freeboard-container article:hover{
+  /* color: white;
+  background-color: #004193;     */
+  transition: all .2s;
+  transform: scale(1.05);
+  border: 2px solid #d4d3d3;
+}
+
+
 .Freearticles{
   display: block;
 }

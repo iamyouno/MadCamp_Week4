@@ -6,5 +6,8 @@ module.exports = function(app, User){
     // const todosController = require('./controllers/todos.controllers');
     const {verifyToken} = require('./middlewares/authorization');
     // app.get('/api/todos/', verifyToken, todosController.getAll);
-
+    
+    app.get('/api/users/check', verifyToken, function(req,res){
+        res.json({user_id: res.locals.userId});
+    })
 }

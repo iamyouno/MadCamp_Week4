@@ -1,11 +1,18 @@
 import React from 'react';
-import './btnStyle.css';
+import './style/btnStyle.css';
 import { Link, Route, BrowserRouter as Router} from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/icons/Person';
+import {useEffect} from 'react';
 
 function Main(props){
+    useEffect(() => {
+        if (props.cookies.user && props.cookies.user !== 'undefined') {
+        props.setHasCookie(true);
+        }
+      }, [ props.cookies ]);
+
     return(
         <>
         <nav style = {{height: "80px"}}>
