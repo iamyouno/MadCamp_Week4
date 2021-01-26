@@ -1,13 +1,26 @@
+/* 
+.body::after {
+    clear: both;
+    display: block;
+    content: '';
+}*/
 
-.room {
-    width: 70%;
+.body {
+    width: auto;
+    height: 100%;
+} 
+
+.body .room {
+    width: 60%;
+    /* float: 'left'; */
+    display: inline-block;
 }
 
 .room table {
     position: relative;
     text-align: center;
     vertical-align: middle;
-    margin-top: 270px;
+    padding-top: 200px;
     margin-left: 50px;
 }
 
@@ -31,18 +44,99 @@
 
 .hall {
     background-color:rgb(141, 141, 141);
-    width: 30%;
+    width: 100px;
     color: white;
-}
-
-.hall div{
-    color: white;
-    padding-left: auto;
-    padding-right: auto;
 }
 
 .roomMemo {
-    position: relative;
+    border: 1px solid black;
+    padding: 10px;
     float: right;
     width: 30%;
+    height: 400px;
+    margin-top: 100px;
+    margin-right: 80px;
+    position: relative;
 }
+
+.roomNavi {
+    list-style-type: none;
+}
+
+.roomNavi::after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.roomNavi li {
+    margin-right: 20px;
+    cursor: pointer;
+    float: left;
+}
+
+/* .roomMemo input {
+    position: absolute;
+    bottom: 0px;
+}
+
+.roomMemo button {
+    position: absolute;
+    bottom: 0px;
+} */
+
+.input_button {
+    position: absolute;
+    bottom: 0px;
+    margin-bottom: 10px;
+}
+
+.timeBlock {
+    border-top: 0.5px solid black;
+    width: 80px;
+    height: 20px;
+    /* user-select: none; */
+    /* touch-action: none; */
+    /* cursor: default !important; */
+    color: white;
+    /* background-color: violet; */
+
+}
+
+/* .timeBlock:active {
+    cursor: default
+}
+
+.timeBlock:hover{
+    cursor: default
+}
+
+.timeBlock::after{
+    cursor: pointer;
+}
+
+.timeBlock:-moz-drag-over{
+    cursor: pointer
+} */
+/* 
+.timeBlock:empty::selection{
+    background-color: #266a92;
+    
+} */
+
+.timeTable:hover {
+    cursor:default
+}
+
+.timeTable:active {
+    cursor:grab
+}
+
+.timeTable {
+    cursor:default !important
+}
+
+.timeTable:-moz-drag-over {
+    cursor:default !important
+}
+

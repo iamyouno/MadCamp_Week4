@@ -20,9 +20,11 @@ var port = process.env.PORT || 8080;
 
 var cobuying = require('./models/cobuying');
 var reply = require('./models/reply');
+var rchange = require('./models/rchange')
 
 var router_cobuying = require('./routes/cobuyingRoutes')(app, cobuying);
 var router_reply = require('./routes/replyRoutes')(app, reply);
+var router_rchange = require('./routes/rchangeRoutes')(app, rchange);
 
 var server = app.listen(port, function () {
     console.log("connect");
