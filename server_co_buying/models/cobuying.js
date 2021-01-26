@@ -5,7 +5,8 @@ var cobuyingSchema = new Schema({
     dorm: String,
     name: String,
     member: Number,
-    info: String
+    info: String,
+    reply: Array
 });
 
 module.exports = mongoose.model('cobuying', cobuyingSchema);

@@ -30,4 +30,25 @@ module.exports = function (app, Cobuying) {
             res.json(cobuying)
         })
     })
+
+    app.put('/api/cobuying/:id', function (req, res) {
+        Cobuying.find({_id: req.params.id}, function (err, cobuying){
+            console.log(cobuying[0].reply)
+            // cobuying[0].reply = [1, 2, 3]
+            // console.log(cobuying[0].reply)
+            cobuying[0].reply = req.body
+            cobuying[0].save(function (err) {
+                if (err){
+                    console.error(err)
+                    return
+                }
+                res.json(cobuying.reply)
+                
+            })
+            // console.log("hi")
+            res.json(cobuying.reply)
+        })
+        // json array 형식으로 content 저장?
+        // 그냥 string array 로 저장
+    })
 }
