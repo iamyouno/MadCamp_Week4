@@ -111,7 +111,6 @@ function Jilli(params) {
             else{
                 setShowButton({show: true})
             }      
-
         })
     }
 
@@ -173,7 +172,7 @@ function Jilli(params) {
 
                 {switchContent.switch === 'roomReply' ? 
                 <div>   
-                    {viewContent.viewRoomNum} 게시판
+                    <div className='roomTitle'> {viewContent.viewRoomNum} 게시판 </div>
                     {replyContent.map(element =>
                     <div>{element.text}</div>)}
                     <div className='input_button'>

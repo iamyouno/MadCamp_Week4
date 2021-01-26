@@ -11,7 +11,7 @@ function Main(){
                     <tr>
                     <h1>KAIST Dormitory Community</h1>
                     </tr><tr>
-                        <li style={{float: 'left'}}><Link to='/Sarang'   style={{textDecoration: 'none' }} ><div>사랑</div></Link></li>
+                        <li style={{float: 'left'}}><Link to='/Co_buying'   style={{textDecoration: 'none' }} ><div>사랑</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Somang'   style={{textDecoration: 'none' }} ><div>소망</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Areum'    style={{textDecoration: 'none' }} ><div>아름</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Seongsil' style={{textDecoration: 'none' }} ><div>성실</div></Link></li>
