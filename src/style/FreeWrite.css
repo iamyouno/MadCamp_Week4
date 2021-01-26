@@ -1,0 +1,255 @@
+.Free {
+    text-align: center;
+  }
+  
+  .movie-container {
+    margin: 0 auto;
+    width: 80%;
+    border: 1px solid #333;
+    padding: 10px 0 30px 0;
+    border-radius: 5px;
+    margin-bottom : 50px;
+  }
+  
+  .form-wrapper{
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .title-input {
+    width: 500px;
+    height: 40px;
+    margin: 10px;
+  }
+  
+  .text-area {
+    width: 80%;
+    min-height: 500px;
+  }
+  
+  .articles Button.submit-button {
+    /* display: block; */
+    margin-bottom: 5px;
+    padding: 0 10px;
+    height: 50px;
+    line-height: 46px;
+    width: 100%;
+    /* border: 2px solid #d6d6d6; */
+    border: 1px solid ;
+    box-sizing: border-box;
+    /* cursor: text; */
+    /* color: #a6a6a6; */
+    font-size: 14px;
+    background-size: 40px 40px;
+  }
+
+  .write-button{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    background: indianred;
+    border-radius: 5px;
+  }
+
+  .FreeWritetitle-wrap{ 
+    /* float: none;
+    position: relative;
+    left: 25px; */
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 780px;
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+  }
+
+  .FreeWritetitle-wrap h1{
+    letter-spacing: -0.5px;
+    color: #292929;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .total-container{
+    position: relative;
+    margin: 0 auto 25px auto;
+    width: 1180px;
+    box-sizing: border-box;
+  }
+
+  .board-container{
+    float: none;
+    position: relative;
+    left: 25px;
+    margin-top: 25px;
+    width: 780px;
+  }
+
+  .board-container article{
+    margin-bottom: -1px;
+    box-sizing: border-box;
+    border: 1px solid #e3e3e3;
+    background-color: #fff;
+    display: block;
+  }
+
+  .articles{
+    display: block;
+  }
+
+  .board-container div.article{
+    display: block;
+    padding: 15px;
+    color: #666;
+    font-family: "맑은 고딕", 돋움, tahoma;
+    font-size: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .board-container article h2.medium{
+    margin-bottom: 5px;
+    line-height: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  .board-container article p.small{
+    margin-bottom: 5px;
+    max-height: 30px;
+    line-height: 15px;
+    white-space: normal;
+    overflow: hidden;
+    color: #a6a6a6;
+    font-size: 12px;
+    word-break: break-all;
+  }
+
+  .board-container article h3.small{
+    float: left;
+    max-width: 90px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 11px;
+    font-weight: normal;
+    letter-spacing: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .board-container article h3{
+    color: #292929;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .board-container article hr{
+    clear: both;
+    height: 0;
+    border: 0;
+    clear: both;
+    width: 100%;
+    height: 0;
+    border: 0;
+  }
+
+  form.FreeWritewrite{
+    position: relative;
+    margin-bottom: 5px;
+    border: 2px solid #d6d6d6;
+    box-sizing: border-box;
+  }
+
+  form.FreeWritewrite p{
+    padding: 15px;
+    border-bottom: 1px solid #e3e3e3;
+    background-color: #fff;
+  }
+
+  form.FreeWritewrite input.title{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    border: 0;
+    color: #292929;
+    font-size: 16px;
+    font-weight: bold;
+    vertical-align: middle;
+
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    cursor: text;
+    
+  }
+
+  form.FreeWritewrite *:focus{
+    outline: none;
+  }
+
+  form.FreeWritewrite textarea {
+    width: 100%;
+    height: 350px;
+    border: 0;
+    color: #292929;
+    font-size: 14px;
+    resize: none;
+    vertical-align: middle;
+  }
+
+  div.FreeWritearticles-wrap{
+    /* float: left; */
+    /* position: absolute;
+    left: 50%;
+    right: 50%; */
+    margin-top: 25px;
+    margin: 0 auto;
+    width: 780px;
+  }
+
+div.FreeWritearticles-wrap form.FreeWritewrite Button{
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    margin-bottom: 13px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    cursor: pointer;
+  }
+
+div.FreeWritearticles-wrap form.FreeWritewrite .anonym{
+    float: left;
+    margin-left: 10px;
+    width: 70px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 40px 40px;
+    cursor: pointer;
+}
+
+.FreeWriteclearBothOnly {
+    clear: both !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 0 !important;
+}
+
+.FreeWritetotal{
+    text-align: center;
+}
+
+  /* .title{
+
+  } */
