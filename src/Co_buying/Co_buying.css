@@ -1,17 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed');
 
-.wrap {
-    padding-top: 30px;
+.Co_buying_wrap {
     margin-left: 100px;
     width: 780px;
-}
-
-.title {
-    padding: 15px;
     border: 1px solid #d6d6d6;
     box-sizing: border-box;
     margin-top: 30px;
+    padding: 15px;
 }
+
   
 .contents-container{
     display: block;
@@ -63,7 +60,7 @@
     margin-top: 7px;
     border: 2px solid #929292;
     padding-left: 5px;
-    float: left;
+    /* float: left; */
 }
 
 .small-input_ {

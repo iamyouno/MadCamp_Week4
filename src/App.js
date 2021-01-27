@@ -13,6 +13,7 @@ import Join from './Join';
 import { withCookies, useCookies } from 'react-cookie';
 import {useState, useEffect} from 'react';
 import { Link, Route, BrowserRouter as Router , Redirect} from 'react-router-dom'
+import JilliBoard from './JilliBoard';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
       <Route exact path = '/Jilli/freeboardwrite/:freeid'><FreeOne></FreeOne></Route>
       <Route exact path = '/Login'><Login setHasCookie = {setHasCookie}></Login></Route>
       <Route exact path = '/Join'><Join></Join></Route>
+      <Route exact path='/Jilli/board/:roomNum'><Jilli/><JilliBoard/></Route>
     </Router>
   )
 }

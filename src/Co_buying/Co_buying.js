@@ -51,8 +51,8 @@ function Co_buying(params) {
 
     return(
         <div className='body'>
-            <div className='wrap'>
-                <h1 className='title'>Co-Buying</h1>
+            <div className='Co_buying_wrap'>
+                <h1>Co-Buying</h1>
             </div>
             <div className='writeButton' onClick={() => setShowWrite(1)}>새 글 작성하기</div>
 

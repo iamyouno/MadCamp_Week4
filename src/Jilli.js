@@ -1,119 +1,166 @@
 import React, {useEffect, useState} from 'react'
 import './Jilli.css'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, Route, BrowserRouter as Router  } from 'react-router-dom';
 import Axios from 'axios';
+import JilliBoard from './JilliBoard'
 
 function Jilli(params) {
 
-    const [viewContent, setViewContent] = useState({
-        viewRoomNum: ''
-    })
+    // const [viewContent, setViewContent] = useState({
+    //     viewRoomNum: ''
+    // })
 
-    const [postReplyContent, setPostReplyContent] = useState({
-        roomNum: '',
-        text: ''
-    })
+    // const [postReplyContent, setPostReplyContent] = useState({
+    //     roomNum: '',
+    //     text: ''
+    // })
 
-    const [replyContent, setReplyContent] = useState([])
+    // const [replyContent, setReplyContent] = useState([])
 
-    const [switchContent, setSwitchContent] = useState({
-        switch: 'roomReply'
-    })
+    // const [switchContent, setSwitchContent] = useState({
+    //     switch: 'roomReply'
+    // })
 
-    const [colorContent, setColorContent] = useState([
-        {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}
-    ])
+    // const [colorContent, setColorContent] = useState([
+    //     {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}
+    // ])
 
-    const [showButton, setShowButton] = useState({
-        show: true
-    })
+    // const [showButton, setShowButton] = useState({
+    //     show: true
+    // })
 
-    const setColor = (num) => () => {
-        if (showButton.show == true ){
-        var list = [...colorContent]
-        list[num] = {color: '#d39ebb'}
-        setColorContent( 
-            list
-        )
-        console.log(colorContent)
-        }
+    const [clkColor, setClkColor] = useState([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
 
-    }
+    // const setColor = (num) => () => {
+    //     if (showButton.show == true ){
+    //         var list = [...colorContent]
+    //         list[num] = {color: '#3f51b5'}
+    //         setColorContent(list)
+    //     }
+    // }
 
-    const roomMemo = (roomNum) => () => {
-        setViewContent({
-            ...viewContent,
-            viewRoomNum: roomNum
-        })
+    // const setColorBlue = (num) => () => {
+    //     if (showButton.show == true ){
+    //         var list = [...colorContent]
+    //         list[num] = {color: '#FFFFFF'}
+    //         setColorContent(list)
+    //     }
+    // }
 
-        setPostReplyContent({
-            ...postReplyContent,
-            roomNum: roomNum
-        })
+    // const toggleColor = (num) => () => {
+    //     // console.log(colorContent[num].color)
+    //     if (colorContent[num].color == '#FFFFFF') {
+    //         console.log('eihiehi')
+    //         setColor(num)();
+    //     }
+    //     else {
+    //         console.log('why')
+    //         var list = [...colorContent]
+    //         list[num] = {color: '#FFFFFF'}
+    //         setColorContent(list)
 
-        setSwitchContent({
-            ...switchContent,
-            switch: 'roomReply'
-        })
+    //     }
+    //     console.log(colorContent[num].color)
+    // }
 
-        setColorContent([
-            {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}
-        ])
+    // // useEffect(() => {}, [colorContent])
 
-        Axios.get('http://192.249.18.168:8080/api/Jilli/'+roomNum).then((response)=>{
-            setReplyContent(response.data)
-        })
-    }
+    // const roomMemo = (roomNum) => () => {
+    //     // setViewContent({
+    //     //     ...viewContent,
+    //     //     viewRoomNum: roomNum
+    //     // })
 
-    const postReply = () => {
-        Axios.post('http://192.249.18.168:8080/api/Jilli/'+postReplyContent.roomNum, {
-            roomNum: postReplyContent.roomNum,
-            text: postReplyContent.text
-        }).then(function (response) {
-            console.log("response")
-            Axios.get('http://192.249.18.168:8080/api/Jilli/'+postReplyContent.roomNum).then((response)=>{
-            setReplyContent(response.data)
-            setPostReplyContent({
-                ...postReplyContent,
-                text: ''
-            })
+    //     // setPostReplyContent({
+    //     //     ...postReplyContent,
+    //     //     roomNum: roomNum
+    //     // })
 
-        })
-        })
-    }
+    //     // setSwitchContent({
+    //     //     ...switchContent,
+    //     //     switch: 'roomReply'
+    //     // })
 
-    const postRchange = () => {
-        var list = []
-        var index = 0
-        colorContent.map(element => {
-            if (element.color === '#d39ebb') {list.push(index)}
-            index ++
-        })
+    //     // setColorContent([
+    //     //     {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}
+    //     // ])
 
-        Axios.post('http://192.249.18.168:8080/api/Jilli/rchange/'+postReplyContent.roomNum, {
-            roomNum: postReplyContent.roomNum,
-            select: colorContent
-        }).then(function (response) {
-            console.log("response rchange")
+    //     // Axios.get('http://192.249.18.168:8080/api/Jilli/'+roomNum).then((response)=>{
+    //     //     setReplyContent(response.data)
+    //     // })
+
+    //     // if (roomNum == 116)
+    //     //     setClkColor([{color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
+    //     // else if (roomNum == 118)
+    //     //     setClkColor([{color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
+    //     // else if (roomNum == 120)
+    //     //     setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}])
+    //     // else if (roomNum == 122)
+    //     //     setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}])
+    //     // <Link to = '/Jilli/board/'+roomNum/>
+    // }
+
+    // const postReply = () => {
+    //     Axios.post('http://192.249.18.168:8080/api/Jilli/'+postReplyContent.roomNum, {
+    //         roomNum: postReplyContent.roomNum,
+    //         text: postReplyContent.text
+    //     }).then(function (response) {
+    //         console.log("response")
+    //         Axios.get('http://192.249.18.168:8080/api/Jilli/'+postReplyContent.roomNum).then((response)=>{
+    //         setReplyContent(response.data)
+    //         setPostReplyContent({
+    //             ...postReplyContent,
+    //             text: ''
+    //         })
+
+    //     })
+    //     })
+    // }
+
+    // const postRchange = () => {
+    //     var list = []
+    //     var index = 0
+    //     colorContent.map(element => {
+    //         if (element.color === '#d39ebb') {list.push(index)}
+    //         index ++
+    //     })
+
+    //     Axios.post('http://192.249.18.168:8080/api/Jilli/rchange/'+postReplyContent.roomNum, {
+    //         roomNum: postReplyContent.roomNum,
+    //         select: colorContent
+    //     }).then(function (response) {
+    //         console.log("response rchange")
             
-        })
-    }
+    //     })
+    // }
 
-    const roomChange = ()=> {
-        setSwitchContent({ ...switchContent, switch: 'roomChange'})
-        Axios.get('http://192.249.18.168:8080/api/Jilli/rchange/'+postReplyContent.roomNum).then((response) =>{
-            console.log(response.data.length)
-            if (response.data.length != 0) { 
-                console.log(response.data[response.data.length-1].select)
-                setColorContent(response.data[response.data.length-1].select)
-                setShowButton({show: false})
-                console.log(showButton) }
-            else{
-                setShowButton({show: true})
-            }      
-        })
-    }
+    // const roomChange = ()=> {
+    //     setSwitchContent({ ...switchContent, switch: 'roomChange'})
+    //     Axios.get('http://192.249.18.168:8080/api/Jilli/rchange/'+postReplyContent.roomNum).then((response) =>{
+    //         console.log(response.data.length)
+    //         if (response.data.length != 0) { 
+    //             console.log(response.data[response.data.length-1].select)
+    //             setColorContent(response.data[response.data.length-1].select)
+    //             setShowButton({show: false})
+    //             console.log(showButton) }
+    //         else{
+    //             setShowButton({show: true})
+    //         }      
+    //     })
+    // }
 
+    // const chooseColor = (num) => () => {
+    //     if (num == 0)
+    //         setClkColor([{color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
+    //     else if (num == 1)
+    //         setClkColor([{color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
+    //     else if (num == 2)
+    //         setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}])
+    //     else if (num == 3)
+    //         setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}])
+
+    //     console.log(clkColor)
+    // }
     return(
         <div className='body'>
             <div className='room'>
@@ -127,10 +174,10 @@ function Jilli(params) {
                         <td></td>
                         <td></td>
                         <td rowSpan='3' className='hall'>HALL</td>
-                        <td><div onClick={roomMemo(116)} style={{cursor:'pointer'}}>116</div></td>
-                        <td><div onClick={roomMemo(118)} style={{cursor:'pointer'}}>118</div></td>
-                        <td><div onClick={roomMemo(120)} style={{cursor:'pointer'}}>120</div></td>
-                        <td><div onClick={roomMemo(122)} style={{cursor:'pointer'}}>122</div></td>
+                        <td><NavLink to ={'/Jilli/board/'+'116'}><div>116</div></NavLink></td>
+                        <td><NavLink to ={'/Jilli/board/'+'118'}><div>118</div></NavLink></td>
+                        <td><NavLink to ={'/Jilli/board/'+'120'}><div>120</div></NavLink></td>
+                        <td><NavLink to ={'/Jilli/board/'+'122'}><div>122</div></NavLink></td>
                         <td><Link to ='/Jilli/124'><div>124</div></Link></td>
                         <td><Link to ='/Jilli/126'><div>126</div></Link></td>
                         <td><Link to ='/Jilli/128'><div>128</div></Link></td>
@@ -162,49 +209,13 @@ function Jilli(params) {
                     </tr>
                 </table>
             </div>
-            
-            {viewContent.viewRoomNum === '' ? null : 
-            <div className='roomMemo'>   
-                <ul className='roomNavi'>
-                    <li onClick={ ()=> setSwitchContent({ ...switchContent, switch: 'roomReply'})}> 방명록 </li>
-                    <li onClick={roomChange}> 입퇴사 기간 체크</li> 
-                </ul>
-
-                {switchContent.switch === 'roomReply' ? 
-                <div>   
-                    <div className='roomTitle'> {viewContent.viewRoomNum} 게시판 </div>
-                    {replyContent.map(element =>
-                    <div>{element.text}</div>)}
-                    <div className='input_button'>
-                        <input value={postReplyContent.text} onChange={e => {
-                            const {_, value} = e.target
-                            setPostReplyContent({
-                                ...postReplyContent,
-                                text: value
-                            })
-                        }}></input>
-                        <button onClick={postReply}>입력</button>
-                    </div>
-                </div> : 
-                
-                <div>
-                    <div className='timeTable'>
-                        <div className='timeBlock' onDragEnter={setColor(0)} style={{background: colorContent[0].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(1)} style={{background: colorContent[1].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(2)} style={{background: colorContent[2].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(3)} style={{background: colorContent[3].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(4)} style={{background: colorContent[4].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(5)} style={{background: colorContent[5].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(6)} style={{background: colorContent[6].color}}></div>
-                        <div className='timeBlock' onDragEnter={setColor(7)} style={{background: colorContent[7].color}}></div>
-                    </div>
-                    
-                    {showButton.show === true ? <button onClick={postRchange}>등록</button> : null}
-                    
-                </div>
-
-                }
-            </div>}
+            {/* <div className='floor'>
+                <div className='eachFloor'>1F</div>
+                <div className='eachFloor'>2F</div>
+                <div className='eachFloor'>3F</div>
+                <div className='eachFloor'>4F</div>
+                <div className='eachFloor'>5F</div>
+            </div> */}
         </div>
     )
     

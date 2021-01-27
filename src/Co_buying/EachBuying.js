@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import Axios from 'axios'
-import './ViewContent.css'
 
 function EachBuying() {
 
@@ -65,7 +64,7 @@ function EachBuying() {
 
             <div>
                 <input input className="title-input" type='text' placeholder='댓글' value={replyContent.content} onChange = {writeReply}/>
-                <button className='button' onClick = {postReply}>등록</button>
+                <button onClick = {postReply}>등록</button>
             </div>
         </div>
     )

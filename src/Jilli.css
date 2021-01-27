@@ -1,27 +1,32 @@
-/* 
-.body::after {
-    clear: both;
-    display: block;
-    content: '';
-}*/
-
-/* .body {
-    width: auto;
-    height: 100%;
-}  */
 
 .room {
-    width: 60%;
-    /* float: 'left'; */
+    width: 70%;
+    /* display: inline-block; */
+    float: left;
+}
+
+.floor {
     display: inline-block;
+}
+
+.eachFloor {
+    width: 30px;
+    height: 30px;
+    color: white;
+    background-color: #8d8d8d;
+    border: 1px solid #d6d6d6;
+    text-align: center;
+    padding-top: 4px;
 }
 
 .room table {
     position: relative;
     text-align: center;
     vertical-align: middle;
-    padding-top: 200px;
+    margin-top: 150px;
     margin-left: 50px;
+    /* border: 1px solid #d6d6d6; */
+    padding: 3px;
 }
 
 .room table tr td {
@@ -30,41 +35,66 @@
 }
 
 .room table div {
-    background-color: rgb(141, 141, 141);
-    width: 60px;
-    height: 105px;
+    border-radius: 0.3rem;
+    background-color: #efefef;
+    /* border: 1px solid #4f86c6; */
+    width: 50px;
+    height: 90px;
     position: relative;
-    font-size: large;
+    font-size: 14px;
     text-align: center;
     align-items: center;
     justify-content: center;
     display: flex;
-    color: white;
+    color: rgb(0, 0, 0);
+    margin: 2px;
+    cursor: pointer;
+}
+
+.room table div:hover {
+    transition: all .2s;
+    transform: scale(1.07);
+    color:white;
+    background-color: #004193;
+}
+
+.room table .active div{
+    background-color:  #004193;
+    color:white;
 }
 
 .hall {
-    background-color:rgb(141, 141, 141);
+    /* border: 2px solid#4f86c6; */
+    border-radius: 0.3rem;
+    background-color: #efefef;
     width: 100px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .roomMemo {
     border: 1px solid #d6d6d6;
     padding: 15px;
-    float: right;
-    width: 15%;
+    width: 270px;
+    margin-top: 150px;
     height: 400px;
-    margin-top: 15%;
-    margin-right: 10%;
     position: relative;
     color: #666;
     font-family: "맑은 고딕", 돋움, tahoma;
     font-size: 14px;
     letter-spacing: -0.5px;
+    display: inline-block;
+    margin-left: 50px;
 }
 
 .roomNavi {
     list-style-type: none;
+    width: 190px;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 2px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 15px;
 }
 
 .roomNavi::after{
@@ -79,25 +109,15 @@
     float: left;
 }
 
-/* .roomMemo input {
-    position: absolute;
-    bottom: 0px;
-}
-
-.roomMemo button {
-    position: absolute;
-    bottom: 0px;
-} */
-
 .roomTitle {
     font-size: 18px;
     font-weight: bold;
     white-space: nowrap;
     text-overflow: ellipsis;
-    background-color: lightcoral;
     font-weight: 800;
     height: 30px;
     width: 30px;
+    margin-bottom: 10px;
 }
 
 .input_button {
@@ -106,52 +126,85 @@
     margin-bottom: 10px;
 }
 
-.timeBlock {
-    border-top: 0.5px solid black;
-    width: 80px;
-    height: 20px;
-    /* user-select: none; */
-    /* touch-action: none; */
-    /* cursor: default !important; */
-    color: white;
-    /* background-color: violet; */
-
+.gusetBkReply {
+    margin-bottom: 5px;
+    padding-left: 8px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    width: 200px;
+    border-width: 3px;
+    border-spacing: 5px;
+    position: relative;
 }
 
-/* .timeBlock:active {
-    cursor: default
+.gusetBkReply::after {
+    position: absolute;
+    border: 1px solid #d6d6d6;
+    border-top: none;
+    border-right: none;
+    height: 10px;
+    width: 100%;
+    bottom:-1px;
+    left: 0;
+    content: "";
 }
 
-.timeBlock:hover{
-    cursor: default
+.gusetBkReplyBut {
+    width: 52px;
+    height: 27px;
+    font-size: 11px;
+    font-weight: 550;
+    color: #4f86c6;
+    padding-top: 5px;
+    font-family: Roboto Condensed, sans-serif;
+    border: none;
+    border-radius: 0.3rem;
+    background: #efefef;
+    margin-left: 20px;
 }
 
-.timeBlock::after{
-    cursor: pointer;
-}
-
-.timeBlock:-moz-drag-over{
-    cursor: pointer
-} */
-/* 
-.timeBlock:empty::selection{
-    background-color: #266a92;
-    
-} */
-
-.timeTable:hover {
-    cursor:default
-}
-
-.timeTable:active {
-    cursor:grab
+.timeLines {
+    float: left;
+    margin-top: -10px;
 }
 
 .timeTable {
-    cursor:default !important
+    margin-top: 30px;
 }
 
-.timeTable:-moz-drag-over {
-    cursor:default !important
+.timeLine {
+    height: 15px;
+    margin-bottom: 15px;
+    /* float: left; */
 }
 
+.timeBlock_ {
+    width: 80px;
+    height: 30px;
+    cursor: default !important;
+    color: white;
+    margin-left: 40px;
+}
+
+.timeBlock_ {
+    border-top: 0.5px solid black;
+    width: 80px;
+    height: 30px;
+    cursor: default !important;
+    color: white;
+    margin-left: 40px;
+}
+
+.timeBlock {
+    border-top: 0.5px solid black;
+    width: 80px;
+    height: 30px;
+    cursor: default !important;
+    color: white;
+    margin-left: 40px;
+}
+
+.timeTable div.timeBlock {
+    cursor: grab
+}
