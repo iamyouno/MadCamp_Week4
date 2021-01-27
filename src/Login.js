@@ -12,7 +12,7 @@ function Login({setHasCookie}){
     const [ userPw, setUserPw ] = useState('');
 
     const loginApi = (user) => {
-        return Axios.post('http://localhost:3002/api/users/login',
+        return Axios.post('http://192.249.18.133:3002/api/users/login',
             user, {withCredentials: true} ).then((response) => response.data);
         
     }

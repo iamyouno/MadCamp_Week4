@@ -1,0 +1,55 @@
+.Usercontainer{
+    margin-top: 24px;
+    margin: 100px auto 0 auto;
+    width: 480px;
+    padding: 12px 0;
+    box-sizing: border-box;
+    border: 1px solid #ededed;
+    border-radius: 12px;
+    display: block;
+}
+
+.Usercontainer div.Usertitle{
+    padding: 12px 24px;
+    display: flex;
+    margin: 0;
+    border: 0;
+}
+
+.Usercontainer div.Usertitle h1{
+    flex: auto;
+    line-height: 30px;
+    color: #292929;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.Usercontainer div.Usertitle .Userlogout{
+    padding: 0 12px;
+}
+
+.Usercontainer div.Usertitle .Userlogout h3{
+    color: #3f51b5
+}
+
+.Usercontainer div.Userprofile{
+    margin: 0 24px 12px 24px;
+    position: relative;
+    padding-left: 0px;
+}
+
+.Usercontainer div.Usertitle h3{
+    line-height: 20px;
+    color: #292929;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.Usercontainer div.Usertitle p{
+    line-height: 18px;
+    color: #a6a6a6;
+    font-size: 12px;
+}

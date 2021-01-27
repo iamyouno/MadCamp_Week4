@@ -29,7 +29,7 @@ exports.createToken = async function (req, res, next) {
 
 exports.createNewUser = async function (req, res, next) {
     try {
-        const finduser = await User.find(req.body);
+        const finduser = await User.find({user_id: req.body.user_id});
 
         if(finduser.length != 0){
             res.json({ error: 'invalid id & password'})

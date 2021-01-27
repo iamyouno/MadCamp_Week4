@@ -12,7 +12,7 @@ function Join(){
     const [ isJoinSuccess, setJoinSuccess ] = useState(false);
 
     const createUserApi = (user) => {
-        return Axios.post('http://localhost:3002/api/users/new',
+        return Axios.post('http://192.249.18.133:3002/api/users/new',
             user).then((response) => response.data);
     }
 

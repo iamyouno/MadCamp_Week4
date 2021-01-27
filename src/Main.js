@@ -24,19 +24,27 @@ function Main(props){
                             variant="outlined"
                             color="primary"
                             startIcon={<Icon />}    
-                        >로그인
+                        ><h3 style ={{fontSize: "17px", marginTop : "0px"}}>Login</h3>
                         </Button>
                     </Link>    
                 </div>
                 )}
                 {props.hasCookie && (
                 <div class = "account" >
+                    <Link to = '/User'>
+                        <Button
+                            className = "my" 
+                            variant="outlined"
+                            color="primary"
+                            style ={{width: "33px"}}
+                            startIcon={<Icon style ={{marginLeft: "-4.5px"}}></Icon>} 
+                        ></Button> 
+                    </Link>
                         <Button 
                             onClick = {props.removeCookie}
                             variant="outlined"
                             color="primary"
-                            startIcon={<Icon />} 
-                        >로그아웃</Button>  
+                        ><h3 style ={{fontSize: "17px"}}>Logout</h3></Button>  
                 </div>
                 )}
             </div>
@@ -52,7 +60,7 @@ function Main(props){
                         <li style={{float: 'left'}}><Link to='/Areum'    style={{textDecoration: 'none' }} ><div>아름</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Seongsil' style={{textDecoration: 'none' }} ><div>성실</div></Link></li>
                     </tr><tr>
-                        <li style={{float: 'left'}}><Link to='/Jilli'    style={{textDecoration: 'none' }} ><div>진리</div></Link></li>
+                        <li style={{float: 'left'}}><Link to='/Jilli/board'    style={{textDecoration: 'none' }} ><div>진리</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Silloe'   style={{textDecoration: 'none' }} ><div>신뢰</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Jihey'    style={{textDecoration: 'none' }} ><div>지혜</div></Link></li>
                         <li style={{float: 'left'}}><Link to='/Sejong'   style={{textDecoration: 'none' }} ><div>세종</div></Link></li>

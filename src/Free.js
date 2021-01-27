@@ -20,7 +20,7 @@ function Free(){
     })
 
     const submitContent = () => {
-        Axios.post('http://localhost:3002/api/freeboard',{
+        Axios.post('http://192.249.18.133:3002/api/freeboard',{
             title: Content.title,
             content: Content.content
         }).then(() => 
@@ -56,7 +56,7 @@ function Free(){
     }
 
     useEffect(() => {
-        Axios.get('http://localhost:3002/api/freeboard').then((response)=>{
+        Axios.get('http://192.249.18.133:3002/api/freeboard').then((response)=>{
             setViewContent(response.data.reverse());
         })
     },[viewContent]) // useEffect 인자로 state 보내주면 state 바뀔때마다 useEffect 실행....

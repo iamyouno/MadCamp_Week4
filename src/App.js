@@ -10,12 +10,14 @@ import FreeWrite from './FreeWrite';
 import FreeOne from './FreeOne';
 import Login from './Login';
 import Join from './Join';
+import Jillimain from './Jillimain';
+import User from './User';
 import { withCookies, useCookies } from 'react-cookie';
 import {useState, useEffect} from 'react';
-import { Link, Route, BrowserRouter as Router , Redirect} from 'react-router-dom'
 import JilliBoard from './JilliBoard';
+import { Link, Route, BrowserRouter as Router , Redirect, Switch, withRouter} from 'react-router-dom';
 
-function App() {
+function App(props) {
 
   const [ cookies, removeCookie ] = useCookies(['user']);
   const [ hasCookie, setHasCookie ] = useState(false);
@@ -28,14 +30,17 @@ function App() {
 
   return (
     <Router>
+      <Route exact path = '/User'><User {...props} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}} ></User></Route>
       <Route exact path='/Co_buying'><Co_buying/></Route>
       <Route path='/Co_buying/:id'><EachBuying/></Route>
       <Route exact path='/Somang'><Jilli/></Route>
       <Route exact path = '/'><Main cookies = {cookies} hasCookie = {hasCookie} setHasCookie = {setHasCookie} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}}/></Route>
       <Route path='/Sarang'><Sarang/></Route>
-      <Route exact path = '/Jilli'><Free/></Route>
+      {/* <Route exact path = '/Jilli'><Free/></Route>
       <Route exact path = '/Jilli/freeboardwrite'>{hasCookie?(<FreeWrite></FreeWrite>):(<Redirect to ={{pathname : "/Login"}}/>)}</Route>
-      <Route exact path = '/Jilli/freeboardwrite/:freeid'><FreeOne></FreeOne></Route>
+      <Route exact path = '/Jilli/freeboardwrite/:freeid'><FreeOne></FreeOne></Route> */}
+      {/* <Route exact path = '/Jilli'><Jillimain hasCookie = {hasCookie}/></Route> */}
+      <Jillimain cookies = {cookies} hasCookie = {hasCookie} setHasCookie = {setHasCookie} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}}/>
       <Route exact path = '/Login'><Login setHasCookie = {setHasCookie}></Login></Route>
       <Route exact path = '/Join'><Join></Join></Route>
       <Route exact path='/Jilli/board/:roomNum'><Jilli/><JilliBoard/></Route>

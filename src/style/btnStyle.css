@@ -9,11 +9,13 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-bottom: 3%;
+    /* margin-bottom: 3%; */
 }
 
 .btn table {
-    margin-top: 35%;
+    position: relative;
+    top : 35%;
+    /* margin-top: 35%; */
 }
 
 .btn table div {
@@ -58,4 +60,15 @@
     box-sizing: border-box;
     font-size: 0;
     float: right;
+    margin-right: 24px;
+}
+
+.account .my{
+    display: inline-block;
+    margin-right: 20px;
+    height: 33px;
+    min-width: 33px;
+    box-sizing: border-box;
+    border-radius: 33px;
+    vertical-align: top;    
 }
