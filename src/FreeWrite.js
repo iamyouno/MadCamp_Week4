@@ -19,14 +19,14 @@ function FreeWrite(){
     })
 
     const submitContent = async () => {
-        await Axios.post('http://localhost:3002/api/freeboard',{
+        await Axios.post('http://192.249.18.133:3002/api/freeboard',{
             title: Content.title,
             content: Content.content,
             anonymous: checked
         },{withCredentials: true}).then(() => 
         alert('POST COMPLETE') //material ui로 바꿀 수 있음... collapse를 사용??
         )
-        document.location.href = "/Jilli"
+        document.location.href = "/Jilli/freebaord"
     }
 
     // const getContent = () =>{
@@ -57,7 +57,7 @@ function FreeWrite(){
     }
 
     useEffect(() => {
-        Axios.get('http://localhost:3002/api/freeboard').then((response)=>{
+        Axios.get('http://192.249.18.133:3002/api/freeboard').then((response)=>{
             setViewContent(response.data);
         })
     },[viewContent]) // useEffect 인자로 state 보내주면 state 바뀔때마다 useEffect 실행....
