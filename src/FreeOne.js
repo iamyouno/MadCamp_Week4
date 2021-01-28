@@ -42,7 +42,7 @@ function FreeOne(){
 
     useEffect( async ()=>{
         try{
-            await Axios.get('http://192.249.18.133:3002/api/users/check',{withCredentials: true}).then(
+            await Axios.get('http://localhost:3002/api/users/check',{withCredentials: true}).then(
                 (response) => {
                     setUser(response.data.user_id);
                     console.log(response.data.user_id);
@@ -59,7 +59,7 @@ function FreeOne(){
             alert('내용을 입력하세요')
         } else {
             try{
-                await Axios.put('http://192.249.18.133:3002/api/freeboard/'+ id,{
+                await Axios.put('http://localhost:3002/api/freeboard/'+ id,{
                     commentcontent: Comment.commentcontent,
                     anonymous: checked
                 },{withCredentials: true}).then(() => 
@@ -137,7 +137,7 @@ function FreeOne(){
         console.log("여기도 반복?")
         console.log(commentid)
         try{
-            await Axios.delete('http://192.249.18.133:3002/api/freeboard/'+ id,{ data: {commentid : commentid} , withCredentials: true}).then( (res) => {
+            await Axios.delete('http://localhost:3002/api/freeboard/'+ id,{ data: {commentid : commentid} , withCredentials: true}).then( (res) => {
                 console.log("느려지나?");
                 setviewComment(res.data.comment);
             })
@@ -150,7 +150,7 @@ function FreeOne(){
 
     const BoardDelete = async() => { 
         try{
-            await Axios.delete('http://192.249.18.133:3002/api/freeboard/delete/'+ id, {withCredentials: true}).then(
+            await Axios.delete('http://localhost:3002/api/freeboard/delete/'+ id, {withCredentials: true}).then(
                 (res) =>{
                     document.location.href = "/Jilli"
                 })

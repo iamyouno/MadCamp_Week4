@@ -16,7 +16,7 @@ function User(props) {
 
     useEffect( async ()=>{
         try{
-            await Axios.get('http://192.249.18.133:3002/api/users/user',{withCredentials: true}).then(
+            await Axios.get('http://localhost:3002/api/users/user',{withCredentials: true}).then(
                 (response) => {
                     setMy(response.data);
                 }

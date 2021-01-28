@@ -77,7 +77,7 @@ function Free(){
         <div className="Freeboard-container">
             <div className = "Freearticles">
                 <div>
-                    <Link to='/Jilli/freeboardwrite'>
+                    <Link to='/Jilli/freeboard/write'>
                         <Button 
                             className="submit-button"
                             variant="outlined"
@@ -92,7 +92,7 @@ function Free(){
                     </Link>
                 </div>
             {viewContent.map(element => 
-                <NavLink to = {'/Jilli/freeboardwrite/' + element._id}>
+                <NavLink to = {'/Jilli/freeboard/write/' + element._id}>
                     <article>
                         <div className = "article">
                             <h2 className = "medium">{element.title}</h2>
