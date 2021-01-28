@@ -16,7 +16,7 @@ function Co_buying(params) {
     const [showWrite, setShowWrite] = useState(0)
 
     useEffect(() => {
-        Axios.get('http://192.249.18.168:8080/api/Jilli').then((response)=>{
+        Axios.get('http://localhost:3002/api/Jilli').then((response)=>{
             // console.log(response.data._id)
             setViewContent(response.data);
         })
@@ -72,7 +72,7 @@ function Co_buying(params) {
                         if (buyContent.name == '') {alert('제목을 입력하시오'); return }
                         if (buyContent.member == '') {alert('인원을 입력하시오'); return }
                         if (buyContent.info == '') {alert('내용을 입력하시오'); return }
-                        Axios.post('http://192.249.18.168:8080/api/cobuying', {
+                        Axios.post('http://localhost:3002/api/cobuying', {
                             dorm: 'Jilli',
                             name: buyContent.name,
                             member: buyContent.member,
@@ -113,7 +113,7 @@ function Co_buying(params) {
             </div>
             <button className="submit-button" onClick={()=>{
                 
-                Axios.post('http://192.249.18.168:8080/api/cobuying', {
+                Axios.post('http://localhost:3002/api/cobuying', {
                     dorm: 'Jilli',
                     name: buyContent.name,
                     member: buyContent.member,

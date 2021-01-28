@@ -15,13 +15,13 @@ function EachBuying() {
     const [viewContent, setViewContent] = useState([])
 
     useEffect(() => {
-        Axios.get('http://192.249.18.168:8080/api/cobuying/'+body.id).then((response)=>{
+        Axios.get('http://localhost:3002/api/cobuying/'+body.id).then((response)=>{
             setViewContent(response.data)
         })
     }, [viewContent])
 
     useEffect(() => {
-        Axios.get('http://192.249.18.168:8080/api/cobuying/'+body.id).then((response)=>{
+        Axios.get('http://localhost:3002/api/cobuying/'+body.id).then((response)=>{
             setViewReplyContent(response.data[0].reply)
         })
     }, [])
@@ -37,9 +37,9 @@ function EachBuying() {
     const postReply = () => {
         setViewReplyContent(viewReplyContent.concat(replyContent.content))
         console.log(replyContent.content)
-        Axios.get('http://192.249.18.168:8080/api/cobuying/'+body.id).then((response) => {
+        Axios.get('http://localhost:3002/api/cobuying/'+body.id).then((response) => {
             var list  = response.data[0].reply.concat(replyContent.content)
-            Axios.put('http://192.249.18.168:8080/api/cobuying/'+body.id, list).then((response)=>{
+            Axios.put('http://localhost:3002/api/cobuying/'+body.id, list).then((response)=>{
                 console.log("put okay")
             })
         })

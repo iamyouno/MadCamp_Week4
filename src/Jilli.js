@@ -11,6 +11,7 @@ function Jilli(params) {
     return(
         <div className='body'>
             <div className='room'>
+
                 <table>
                     <tr>
                         <td style={{fontSize: '24px'}}> {floorNum} </td>
@@ -20,7 +21,7 @@ function Jilli(params) {
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td rowSpan='3' className='hall'>HALL</td>
+                        <td rowSpan='3'><div className = "hall">HALL</div></td>
                         <td><NavLink to ={'/Jilli/board/'+'116'}><div>116</div></NavLink></td>
                         <td><NavLink to ={'/Jilli/board/'+'118'}><div>118</div></NavLink></td>
                         <td><NavLink to ={'/Jilli/board/'+'120'}><div>120</div></NavLink></td>
@@ -57,12 +58,12 @@ function Jilli(params) {
                 </table>
             </div>
             <div className='floor'>
-                <Link to ='/Jilli/board'><div className='eachFloor'>1F</div></Link>
-                <Link to ='/Jilli/board/floor/2'><div className='eachFloor'>2F</div></Link>
-                <Link to ='/Jilli/board/floor/3'><div className='eachFloor'>3F</div></Link>
-                <Link to ='/Jilli/board/floor/4'><div className='eachFloor'>4F</div></Link>
-                <Link to ='/Jilli/board/floor/5'><div className='eachFloor'>5F</div></Link>
-            </div>
+                    <Link to ='/Jilli/board'><div className='eachFloor'>1F</div></Link>
+                    <Link to ='/Jilli/board/floor/2'><div className='eachFloor'>2F</div></Link>
+                    <Link to ='/Jilli/board/floor/3'><div className='eachFloor'>3F</div></Link>
+                    <Link to ='/Jilli/board/floor/4'><div className='eachFloor'>4F</div></Link>
+                    <Link to ='/Jilli/board/floor/5'><div className='eachFloor'>5F</div></Link>
+                </div>
         </div>
     )
     

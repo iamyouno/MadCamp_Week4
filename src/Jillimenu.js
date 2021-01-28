@@ -18,6 +18,12 @@ function Jillimenu(props) {
 //     }
 //   }, [ cookies ]);
 
+    const handlelogout = () => {
+        props.removeCookie();
+        document.location.href = "/"
+    }
+
+
   return (
     <nav>
         <div className = "Jillimenuwrap">
@@ -45,7 +51,7 @@ function Jillimenu(props) {
                             ></Button>
                         </Link> 
                         <Button 
-                            onClick = {props.removeCookie}
+                            onClick = {() => {handlelogout()}}
                             variant="outlined"
                             color="primary"
                         ><h3 style ={{fontSize: "17px"}}>Logout</h3></Button>  
