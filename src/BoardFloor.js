@@ -1,13 +1,12 @@
 import React from 'react';
 import {useParams, Link} from 'react-router-dom'
+import './Jilli.css'
 
 function BoardFloor(params) {
 
     var floor = useParams().floor
     return(
-        <div>
-            
-
+        <div className='Jillibody'>
             <div className='room'>
                 <table>
                     <tr>
@@ -18,7 +17,7 @@ function BoardFloor(params) {
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td rowSpan='3' className='hall'>HALL</td>
+                        <td rowSpan='3'><div className = "hall">HALL</div></td>
                         <td><div>{floor}16</div></td>
                         <td><div>{floor}18</div></td>
                         <td><div>{floor}20</div></td>

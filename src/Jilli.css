@@ -1,14 +1,23 @@
 
-.room {
-    width: 70%;
-    /* display: inline-block; */
-    float: left;
+.Jillibody{
+    display: flex;
+    flex-direction: row;
+    float:left;
+    margin-top: 50px;
 }
 
-.floor {
-    float: left;
-    margin-left: -160px;
+.room {
+    width: 815px;
+    /* display: inline-block; */
+    /* float: left; */
+}
+
+.Jillibody .floor {
+    /* float: left; */
+    /* margin-left: 0px; */
     margin-top: 50px;
+    position: relative;
+    right: 0;
 }
 
 .eachFloor {
@@ -69,10 +78,11 @@
     color:white;
 }
 
-.hall {
+.room table div.hall {
     /* border: 2px solid#4f86c6; */
     border-radius: 0.3rem;
     background-color: #efefef;
+    height: 300px;
     width: 100px;
     color: rgb(0, 0, 0);
 }

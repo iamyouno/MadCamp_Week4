@@ -42,10 +42,11 @@ module.exports = function (app, Cobuying) {
                     console.error(err)
                     return
                 }
+                
                 res.json(cobuying.reply)
                 
             })
-            // console.log("hi")
+            console.log("del success")
             res.json(cobuying.reply)
         })
         // json array 형식으로 content 저장?
