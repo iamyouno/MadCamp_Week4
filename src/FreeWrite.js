@@ -19,7 +19,7 @@ function FreeWrite(){
     })
 
     const submitContent = async () => {
-        await Axios.post('http://192.249.18.133:3002/api/freeboard',{
+        await Axios.post('http://localhost:3002/api/freeboard',{
             title: Content.title,
             content: Content.content,
             anonymous: checked

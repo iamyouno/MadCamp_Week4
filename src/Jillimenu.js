@@ -56,10 +56,10 @@ function Jillimenu(props) {
                     <NavLink exact path to ="/" className ="JillimenuNavlink">메인</NavLink>
                 </li>
                 <li>
-                    <NavLink exact path to ="/Jilli/board" className ="JillimenuNavlink">진리관 게시판</NavLink>
+                    <NavLink path to ="/Jilli/board" className ="JillimenuNavlink">진리관 게시판</NavLink>
                 </li>
                 <li>
-                    <NavLink exact path to ="/Jilli/freeboard" className ="JillimenuNavlink" >진리관 자유 게시판</NavLink>
+                    <NavLink path to ="/Jilli/freeboard" className ="JillimenuNavlink" >진리관 자유 게시판</NavLink>
                 </li>
                 <li>
                     <NavLink exact path to ="/Jilli/Co-buying" className ="JillimenuNavlink">공동 구매</NavLink>

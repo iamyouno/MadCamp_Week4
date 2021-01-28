@@ -194,6 +194,7 @@
     cursor: default !important;
     color: white;
     margin-left: 40px;
+    user-select: none;
 }
 
 .timeBlock {
@@ -203,8 +204,18 @@
     cursor: default !important;
     color: white;
     margin-left: 40px;
+    user-select: none;
 }
 
 .timeTable div.timeBlock {
     cursor: grab
+}
+
+.timeBlock:hover{
+    border: 2px solid black;
+    border-bottom: 1px solid black;
+}
+.timeBlock_:hover{
+    border: 2px solid black;
+    border-bottom: 1px solid black;
 }

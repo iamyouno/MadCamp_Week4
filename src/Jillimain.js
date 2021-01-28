@@ -33,8 +33,8 @@ function Jillimain(props) {
       <Route exact path = '/Jilli/board'><Jilli/></Route>
       <Route exact path = '/Jilli/Co-buying'><Co_buying/></Route>
       <Route exact path = '/Jilli/freeboard'><Free/></Route>
-      <Route exact path = '/Jilli/freeboardwrite'>{props.hasCookie?(<FreeWrite></FreeWrite>):(<Redirect to ={{pathname : "/Login"}}/>)}</Route>
-      <Route exact path = '/Jilli/freeboardwrite/:freeid'><FreeOne></FreeOne></Route>
+      <Route exact path = '/Jilli/freeboard/write'>{props.hasCookie?(<FreeWrite></FreeWrite>):(<Redirect to ={{pathname : "/Login"}}/>)}</Route>
+      <Route exact path = '/Jilli/freeboard/write/:freeid'><FreeOne></FreeOne></Route>
       {/* <Route exact path = '/Login'><Login setHasCookie = {setHasCookie}></Login></Route>
       <Route exact path = '/Join'><Join></Join></Route> */}
     </>
