@@ -6,167 +6,14 @@ import JilliBoard from './JilliBoard'
 
 function Jilli(params) {
 
-    // const [viewContent, setViewContent] = useState({
-    //     viewRoomNum: ''
-    // })
-
-    // const [postReplyContent, setPostReplyContent] = useState({
-    //     roomNum: '',
-    //     text: ''
-    // })
-
-    // const [replyContent, setReplyContent] = useState([])
-
-    // const [switchContent, setSwitchContent] = useState({
-    //     switch: 'roomReply'
-    // })
-
-    // const [colorContent, setColorContent] = useState([
-    //     {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}
-    // ])
-
-    // const [showButton, setShowButton] = useState({
-    //     show: true
-    // })
-
     const [clkColor, setClkColor] = useState([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
-
-    // const setColor = (num) => () => {
-    //     if (showButton.show == true ){
-    //         var list = [...colorContent]
-    //         list[num] = {color: '#3f51b5'}
-    //         setColorContent(list)
-    //     }
-    // }
-
-    // const setColorBlue = (num) => () => {
-    //     if (showButton.show == true ){
-    //         var list = [...colorContent]
-    //         list[num] = {color: '#FFFFFF'}
-    //         setColorContent(list)
-    //     }
-    // }
-
-    // const toggleColor = (num) => () => {
-    //     // console.log(colorContent[num].color)
-    //     if (colorContent[num].color == '#FFFFFF') {
-    //         console.log('eihiehi')
-    //         setColor(num)();
-    //     }
-    //     else {
-    //         console.log('why')
-    //         var list = [...colorContent]
-    //         list[num] = {color: '#FFFFFF'}
-    //         setColorContent(list)
-
-    //     }
-    //     console.log(colorContent[num].color)
-    // }
-
-    // // useEffect(() => {}, [colorContent])
-
-    // const roomMemo = (roomNum) => () => {
-    //     // setViewContent({
-    //     //     ...viewContent,
-    //     //     viewRoomNum: roomNum
-    //     // })
-
-    //     // setPostReplyContent({
-    //     //     ...postReplyContent,
-    //     //     roomNum: roomNum
-    //     // })
-
-    //     // setSwitchContent({
-    //     //     ...switchContent,
-    //     //     switch: 'roomReply'
-    //     // })
-
-    //     // setColorContent([
-    //     //     {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}, {color: '#0000000'}
-    //     // ])
-
-    //     // Axios.get('http://192.249.18.168:8080/api/Jilli/'+roomNum).then((response)=>{
-    //     //     setReplyContent(response.data)
-    //     // })
-
-    //     // if (roomNum == 116)
-    //     //     setClkColor([{color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
-    //     // else if (roomNum == 118)
-    //     //     setClkColor([{color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
-    //     // else if (roomNum == 120)
-    //     //     setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}])
-    //     // else if (roomNum == 122)
-    //     //     setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}])
-    //     // <Link to = '/Jilli/board/'+roomNum/>
-    // }
-
-    // const postReply = () => {
-    //     Axios.post('http://192.249.18.168:8080/api/Jilli/'+postReplyContent.roomNum, {
-    //         roomNum: postReplyContent.roomNum,
-    //         text: postReplyContent.text
-    //     }).then(function (response) {
-    //         console.log("response")
-    //         Axios.get('http://192.249.18.168:8080/api/Jilli/'+postReplyContent.roomNum).then((response)=>{
-    //         setReplyContent(response.data)
-    //         setPostReplyContent({
-    //             ...postReplyContent,
-    //             text: ''
-    //         })
-
-    //     })
-    //     })
-    // }
-
-    // const postRchange = () => {
-    //     var list = []
-    //     var index = 0
-    //     colorContent.map(element => {
-    //         if (element.color === '#d39ebb') {list.push(index)}
-    //         index ++
-    //     })
-
-    //     Axios.post('http://192.249.18.168:8080/api/Jilli/rchange/'+postReplyContent.roomNum, {
-    //         roomNum: postReplyContent.roomNum,
-    //         select: colorContent
-    //     }).then(function (response) {
-    //         console.log("response rchange")
-            
-    //     })
-    // }
-
-    // const roomChange = ()=> {
-    //     setSwitchContent({ ...switchContent, switch: 'roomChange'})
-    //     Axios.get('http://192.249.18.168:8080/api/Jilli/rchange/'+postReplyContent.roomNum).then((response) =>{
-    //         console.log(response.data.length)
-    //         if (response.data.length != 0) { 
-    //             console.log(response.data[response.data.length-1].select)
-    //             setColorContent(response.data[response.data.length-1].select)
-    //             setShowButton({show: false})
-    //             console.log(showButton) }
-    //         else{
-    //             setShowButton({show: true})
-    //         }      
-    //     })
-    // }
-
-    // const chooseColor = (num) => () => {
-    //     if (num == 0)
-    //         setClkColor([{color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
-    //     else if (num == 1)
-    //         setClkColor([{color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}])
-    //     else if (num == 2)
-    //         setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}, {color: '#8d8d8d'}])
-    //     else if (num == 3)
-    //         setClkColor([{color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#8d8d8d'}, {color: '#004193'}])
-
-    //     console.log(clkColor)
-    // }
+    const [floorNum, setFloorNum] = useState('1F')
     return(
         <div className='body'>
             <div className='room'>
                 <table>
                     <tr>
-                        <td></td>
+                        <td style={{fontSize: '24px'}}> {floorNum} </td>
                         <td></td>
                         <td></td>
                         <td></td>
@@ -209,13 +56,13 @@ function Jilli(params) {
                     </tr>
                 </table>
             </div>
-            {/* <div className='floor'>
-                <div className='eachFloor'>1F</div>
-                <div className='eachFloor'>2F</div>
-                <div className='eachFloor'>3F</div>
-                <div className='eachFloor'>4F</div>
-                <div className='eachFloor'>5F</div>
-            </div> */}
+            <div className='floor'>
+                <Link to ='/Jilli/board'><div className='eachFloor'>1F</div></Link>
+                <Link to ='/Jilli/board/floor/2'><div className='eachFloor'>2F</div></Link>
+                <Link to ='/Jilli/board/floor/3'><div className='eachFloor'>3F</div></Link>
+                <Link to ='/Jilli/board/floor/4'><div className='eachFloor'>4F</div></Link>
+                <Link to ='/Jilli/board/floor/5'><div className='eachFloor'>5F</div></Link>
+            </div>
         </div>
     )
     

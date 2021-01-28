@@ -26,6 +26,10 @@ function JilliBoard(params) {
         show: true
     })
 
+    const [deleteButton, setDeleteButton] = useState({
+        show: true
+    })
+
     useEffect(()=>{
         Axios.get('http://192.249.18.168:8080/api/Jilli/'+roomNum).then((response)=>{
             setReplyContent(response.data)
@@ -129,19 +133,28 @@ function JilliBoard(params) {
         })
     }
 
+    const delRchange = () => {
+        Axios.delete('http://192.249.18.168:8080/api/Jilli/rchange/'+roomNum)
+            .then((response) => {
+                setShowButton({show: true})
+                setColorContent([{color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}, {color: '#FFFFFF'}])
+            })
+
+    }
+
     return(
         <div className='body' onMouseUp={()=>setIsItClick(0)}>
             <div className='roomMemo' >
                 <ul className='roomNavi'>
                     <li onClick={ ()=> setSwitchContent({ ...switchContent, switch: 'roomReply'})}> 방명록 </li>
-                    <li onClick={roomChange}> 입퇴사 기간 체크</li> 
+                    <li onClick={roomChange}> 입퇴사 기간</li> 
                 </ul>
 
                 {switchContent.switch === 'roomReply' ? 
                 <div>   
                     <div className='roomTitle'> {roomNum}호 방명록 </div>
                     {replyContent.map(element =>
-                    <div className='gusetBkReply'><div>{element.text}</div></div>)}
+                    <div className='guestBkReply'><div>{element.text}</div></div>)}
                     <div className='input_button'>
                         <input value={postReplyContent.text} onChange={e => {
                             const {_, value} = e.target
@@ -150,7 +163,7 @@ function JilliBoard(params) {
                                 text: value
                             })
                         }}></input>
-                        <button className='gusetBkReplyBut'onClick={postReply}>입력</button>
+                        <button className='guestBkReplyBut'onClick={postReply}>입력</button>
                     </div>
                 </div> : 
                 
@@ -178,7 +191,9 @@ function JilliBoard(params) {
                         <div className='timeBlock'/>
                     </div>
 
-                    {showButton.show === true ? <button onClick={postRchange}>등록</button> : null}
+                    {showButton.show === true ? <button className='timePostButton' onClick={postRchange}>등록</button> : null}
+
+                    {deleteButton.show === true ? <button className='timeDelButton' onClick={delRchange}>삭제</button> : null}
                     
                 </div>
                 }
