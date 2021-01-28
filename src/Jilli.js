@@ -10,6 +10,7 @@ function Jilli(params) {
     const [floorNum, setFloorNum] = useState('1F')
     return(
         <div className='body'>
+            
             <div className='room'>
                 <table>
                     <tr>

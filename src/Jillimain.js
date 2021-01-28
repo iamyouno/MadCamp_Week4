@@ -32,6 +32,7 @@ function Jillimain(props) {
       <Route path='/Sarang'><Sarang/></Route> */}
       <Route path = '/Jilli'><Jillimenu cookies = {props.cookies} hasCookie = {props.hasCookie} setHasCookie = {props.setHasCookie} removeCookie = {() => {props.removeCookie('user'); props.setHasCookie(false);}}></Jillimenu></Route>
       <Route exact path = '/Jilli/board'><Jilli/></Route>
+      <Route exact path='/Jilli/Co_buying/:id'><EachBuying/></Route>
 
       <Route exact path = '/Jilli/board/floor/:floor'><BoardFloor/></Route>
 

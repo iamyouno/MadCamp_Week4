@@ -32,7 +32,7 @@ function App(props) {
     <Router>
       <Route exact path = '/User'><User {...props} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}} ></User></Route>
       <Route exact path='/Co_buying'><Co_buying/></Route>
-      <Route path='/Co_buying/:id'><EachBuying/></Route>
+      {/* <Route path='/Jilli/Co_buying/:id'><EachBuying/></Route> */}
       <Route exact path='/Somang'><Jilli/></Route>
       <Route exact path = '/'><Main cookies = {cookies} hasCookie = {hasCookie} setHasCookie = {setHasCookie} removeCookie = {() => {removeCookie('user'); setHasCookie(false);}}/></Route>
       <Route path='/Sarang'><Sarang/></Route>

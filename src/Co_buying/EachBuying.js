@@ -51,20 +51,23 @@ function EachBuying() {
     }
 
     return(
-        <div>
+        <div className='cobuyingContent'>
             {viewContent.map(element => 
-            <div className='each-content'>
+            <div className='eachBuyingContent'>
                 <h3>{element.name}, {element.member}</h3>
                 <p>{element.info}</p>
             </div>
             )}
             
-            {viewReplyContent.map(element => 
-                <div>{element}</div>)}
+            
+            <div className='replyCobuying'>
+                {viewReplyContent.map(element => 
+                <div className='eachReply'>{element}</div>)}
 
-            <div>
-                <input input className="title-input" type='text' placeholder='댓글' value={replyContent.content} onChange = {writeReply}/>
-                <button onClick = {postReply}>등록</button>
+                <div className='postReplyCobuying'>
+                    <input input className="title-input" type='text' placeholder='댓글' value={replyContent.content} onChange = {writeReply}/>
+                    <button onClick = {postReply}>등록</button>
+                </div>
             </div>
         </div>
     )

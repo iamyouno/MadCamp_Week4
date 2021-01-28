@@ -7,7 +7,7 @@
 
 .floor {
     float: left;
-    margin-left: -140px;
+    margin-left: -160px;
     margin-top: 50px;
 }
 
@@ -237,7 +237,21 @@
     width: 52px;
     height: 27px;
     line-height: 27px;
-    font-size: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    /* color: #4f86c6; */
+    font-family: Roboto Condensed, sans-serif;
+    border: none;
+    border-radius: 0.3rem;
+    background: #efefef;
+    margin-left: 20px;
+}
+
+.timeDelButton {
+    width: 52px;
+    height: 27px;
+    line-height: 27px;
+    font-size: 12px;
     font-weight: 500;
     /* color: #4f86c6; */
     font-family: Roboto Condensed, sans-serif;

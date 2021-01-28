@@ -6,6 +6,8 @@ function BoardFloor(params) {
     var floor = useParams().floor
     return(
         <div>
+            
+
             <div className='room'>
                 <table>
                     <tr>

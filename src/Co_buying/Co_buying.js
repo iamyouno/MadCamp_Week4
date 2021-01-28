@@ -96,7 +96,7 @@ function Co_buying(params) {
 
             <div className='contents-container'>
                 {viewContent.map(element => 
-                    <Link to ={'/Co_buying/'+element._id} style={{display: 'block'}}>
+                    <Link to ={'Co_buying/'+element._id} style={{display: 'block'}}>
                         <article>
                             <div className='each-content'>
                                 <h3>{element.name}, {element.member}</h3>
